@@ -39,6 +39,7 @@ System.register(['angular2/core', './../person.service', 'angular2/router'], fun
                     console.log(lastName);
                     console.log("test");
                     this._personService.addPersonPost(firstName, lastName);
+                    //Goes to show people page
                     this._router.navigate(['ShowPeople']);
                 };
                 AddPersonComponent.prototype.test = function () {

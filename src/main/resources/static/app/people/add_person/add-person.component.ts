@@ -28,6 +28,7 @@ export class AddPersonComponent
 		console.log(lastName);
 		console.log("test");
 		this._personService.addPersonPost(firstName, lastName);
+		//Goes to show people page
 		this._router.navigate(['ShowPeople']);
 	}
 
