@@ -36,7 +36,6 @@ System.register(['angular2/core', './../person.service', 'angular2/router'], fun
                 };
                 ShowPeopleComponent.prototype.ngOnInit = function () {
                     console.log("getting people");
-                    console.log("changes");
                     this.getPeople();
                 };
                 ShowPeopleComponent.prototype.gotoDetail = function (person) {
@@ -48,9 +47,6 @@ System.register(['angular2/core', './../person.service', 'angular2/router'], fun
                     core_1.Component({
                         selector: 'show-people',
                         templateUrl: 'app/people/show_people/show-people.html',
-                        styles: [
-                            "\n\t\t.selected {\n      background-color: #CFD8DC !important;\n      color: white;\n    }\n    .people {\n      margin: 0 0 2em 0;\n      list-style-type: none;\n      padding: 0;\n      width: 15em;\n    }\n    .people li {\n      cursor: pointer;\n      position: relative;\n      left: 0;\n      background-color: #EEE;\n      margin: .5em;\n      padding: .3em 0;\n      height: 1.6em;\n      border-radius: 4px;\n    }\n    .people li.selected:hover {\n      background-color: #BBD8DC !important;\n      color: white;\n    }\n    .people li:hover {\n      color: #607D8B;\n      background-color: #DDD;\n      left: .1em;\n    }\n    .people .text {\n      position: relative;\n      top: -3px;\n    }\n    .people .badge {\n      display: inline-block;\n      font-size: small;\n      color: white;\n      padding: 0.8em 0.7em 0 0.7em;\n      background-color: #607D8B;\n      line-height: 1em;\n      position: relative;\n      left: -1px;\n      top: -4px;\n      height: 1.8em;\n      margin-right: .8em;\n      border-radius: 4px 0 0 4px;\n    }\n\t\t"
-                        ]
                     }), 
                     __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router])
                 ], ShowPeopleComponent);

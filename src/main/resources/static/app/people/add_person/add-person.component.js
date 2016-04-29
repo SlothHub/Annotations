@@ -1,4 +1,4 @@
-System.register(['angular2/core', './../person.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './../person.service', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './../person.service'], function(exports_1, co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, person_service_1;
+    var core_1, person_service_1, router_1;
     var AddPersonComponent;
     return {
         setters:[
@@ -19,22 +19,27 @@ System.register(['angular2/core', './../person.service'], function(exports_1, co
             },
             function (person_service_1_1) {
                 person_service_1 = person_service_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             AddPersonComponent = (function () {
                 //person = new Person(null,"","");
-                function AddPersonComponent(_personService) {
+                function AddPersonComponent(_personService, _router) {
                     this._personService = _personService;
+                    this._router = _router;
                     this.active = true;
                     this.submitted = false;
                 }
                 AddPersonComponent.prototype.onSubmit = function (firstName, lastName) {
-                    this.submitted = true;
+                    //this.submitted=true;
                     //console.log(this.form.value)
                     console.log(firstName);
                     console.log(lastName);
                     console.log("test");
                     this._personService.addPersonPost(firstName, lastName);
+                    this._router.navigate(['ShowPeople']);
                 };
                 AddPersonComponent.prototype.test = function () {
                     //this.person = new Person(null, "asdasd", "jjjj");
@@ -44,7 +49,7 @@ System.register(['angular2/core', './../person.service'], function(exports_1, co
                         selector: 'add-person',
                         templateUrl: 'app/people/add_person/add-person.html',
                     }), 
-                    __metadata('design:paramtypes', [person_service_1.PersonService])
+                    __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router])
                 ], AddPersonComponent);
                 return AddPersonComponent;
             }());

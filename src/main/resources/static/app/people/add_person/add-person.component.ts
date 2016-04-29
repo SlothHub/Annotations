@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import {Person} from './../person';
 import {PersonService} from './../person.service';
+import {Router} from 'angular2/router';
 
 @Component({
 	selector:'add-person',
@@ -13,19 +14,21 @@ export class AddPersonComponent
 	active = true;
 	submitted = false;
 	//person = new Person(null,"","");
-	constructor(private _personService:PersonService
+	constructor(private _personService:PersonService,
+				private _router:Router
 				){}
 
 	
 
 	onSubmit(firstName:string, lastName:string)
 	{
-		this.submitted=true;
+		//this.submitted=true;
 		//console.log(this.form.value)
 		console.log(firstName);
 		console.log(lastName);
 		console.log("test");
 		this._personService.addPersonPost(firstName, lastName);
+		this._router.navigate(['ShowPeople']);
 	}
 
 	test()
