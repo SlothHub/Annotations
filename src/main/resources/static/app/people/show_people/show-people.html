@@ -1,0 +1,9 @@
+<h2>showing people:</h2>
+<ul class="people">
+      <li *ngFor="#person of people"
+        [class.selected]="hero === selectedHero"
+        (click)="gotoDetail(person)">
+        <span class="badge">{{person.id}}</span> {{person.firstName}}  {{person.firstName}}
+      </li>
+</ul>
+

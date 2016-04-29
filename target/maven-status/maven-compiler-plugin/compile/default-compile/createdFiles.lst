@@ -1,0 +1,8 @@
+com\person\Person.class
+com\config\HibernateConfiguration.class
+com\person\PersonOwnRepository.class
+com\person\PersonController.class
+com\person\PersonServiceImpl.class
+com\person\PersonService.class
+com\person\PersonRepository.class
+com\Application.class
